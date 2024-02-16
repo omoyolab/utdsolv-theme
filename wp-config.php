@@ -21,16 +21,20 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'local' );
-
-/** Database username */
-define( 'DB_USER', 'root' );
-
-/** Database password */
-define( 'DB_PASSWORD', 'root' );
-
-/** Database hostname */
-define( 'DB_HOST', 'localhost' );
+/** The name of the database for WordPress */
+if (strstr($_SERVER['SERVER_NAME'], 'utdsolv.local')){
+	define( 'DB_NAME', 'local' );
+	define( 'DB_USER', 'root' );
+	define( 'DB_PASSWORD', 'root' );
+	define( 'DB_HOST', 'localhost' );
+	}else{
+		define( 'DB_NAME', 'dbf1xvsrgstorf' );
+		define( 'DB_USER', 'uh2hidgucqyol' );
+		define( 'DB_PASSWORD', 'hg1esyw9mlzj' );
+		define( 'DB_HOST', '127.0.0.1' );
+	}
+	 
+	
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
