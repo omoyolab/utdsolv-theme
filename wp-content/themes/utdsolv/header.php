@@ -15,17 +15,15 @@
             <div class="utd-header">
                 <div class="wrapper">
                     <div class="utd-header__logo">
-                        <a href="https://www.utdallas.edu/"><img
-                                src="https://websvcs.utdallas.edu/shared/svg/utd-wordmark-1line-white-web.svg"
-                                alt="The University of Texas at Dallas"></a>
+                        <a href="https://www.utdallas.edu/"><img src=" <?php echo get_template_directory_uri(); ?>/assets/images/icons/utd-wordmark-1line-white-web.svg"></a>
                     </div>
 
                     <div class="utd-header__links">
                         <ul>
-                            <li>Directory</li>
-                            <li>Campus</li>
-                            <li>E-learning</li>
-                            <li>Galaxy</li>
+                            <li><a href="https://www.utdallas.edu/directory/">Directory</a></li>
+                            <li><a href="https://www.utdallas.edu/campus-life/">Campus </a></li>
+                            <li><a href="https://elearning.utdallas.edu/ultra">E-learning</a></a></li>
+                            <li><a href="https://www.utdallas.edu/galaxy/">Galaxy</li>
                         </ul>
                     </div>
                 </div>

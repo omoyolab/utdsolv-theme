@@ -4,9 +4,7 @@
             <div class="jsom-footer__wrapper">
                 <div class="jsom-footer__col">
                     <div class="jsom-footer__logo">
-                        <a href="https://www.utdallas.edu/"><img
-                                src="https://websvcs.utdallas.edu/shared/svg/utd-wordmark-1line-orange.svg"
-                                alt="The University of Texas at Dallas"></a>
+                    <a href="https://jindal.utdallas.edu/"> <img src=" <?php echo get_template_directory_uri(); ?>/assets/images/icons/utd-wordmark-1line-orange.svg"></a>
                     </div>
                     <div
                         class="jsom-footer__contact jsom-footer__contact--address">
@@ -38,37 +36,38 @@
                             <li
                                 class="jsom-social-links__item jsom-social-links__item--Facebook">
                                 <a class="jsom-social-links__link"
-                                    href="https://facebook.com" target="_blank">
+                                    href="https://www.facebook.com/jindal.utdallas" target="_blank">
                                     <img
-                                        src="https://websvcs.utdallas.edu/shared/svg/icon-facebook-black.svg"
+                                    src=" <?php echo get_template_directory_uri(); ?>/assets/images/icons/icon-facebook-black.svg"
                                         alt="Facebook">
                                 </a>
                             </li>
                             <li
                                 class="jsom-social-links__item jsom-social-links__item--Instagram">
                                 <a class="jsom-social-links__link"
-                                    href="https://instagram.com"
+                                    href="https://www.instagram.com/jindal_utdallas/"
                                     target="_blank">
                                     <img
-                                        src="https://websvcs.utdallas.edu/shared/svg/icon-instagram-black.svg"
+                                    src=" <?php echo get_template_directory_uri(); ?>/assets/images/icons/icon-instagram-black.svg"
                                         alt="Instagram">
                                 </a>
                             </li>
+
                             <li
                                 class="jsom-social-links__item jsom-social-links__item--X">
                                 <a class="jsom-social-links__link"
-                                    href="https://twitter.com" target="_blank">
+                                    href="https://twitter.com/jindal_utdallas" target="_blank">
                                     <img
-                                        src="https://websvcs.utdallas.edu/shared/svg/icon-x-black.svg"
+                                    src=" <?php echo get_template_directory_uri(); ?>/assets/images/icons/icon-x-black.svg"
                                         alt="X, formerly Twitter">
                                 </a>
                             </li>
                             <li
                                 class="jsom-social-links__item jsom-social-links__item--LinkedIn">
                                 <a class="jsom-social-links__link"
-                                    href="https://linkedin.com" target="_blank">
+                                    href="https://www.linkedin.com/school/university-of-texas-at-dallas---naveen-jindal-school-of-management/mycompany/?viewAsMember=true" target="_blank">
                                     <img
-                                        src="https://websvcs.utdallas.edu/shared/svg/icon-linkedin-black.svg"
+                                    src=" <?php echo get_template_directory_uri(); ?>/assets/images/icons/icon-linkedin-black.svg"
                                         alt="LinkedIn">
                                 </a>
                             </li>
@@ -76,10 +75,10 @@
                                 class="jsom-social-links__item jsom-social-links__item--YouTube">
                                 <a
                                     class="jsom-social-links__link"
-                                    href="https://www.youtube.com/@ohiostateuniversity"
+                                    href="https://www.youtube.com/channel/UCoUw4cCn3EFg2RIQKJt8aSA"
                                     target="_blank">
                                     <img
-                                        src="https://websvcs.utdallas.edu/shared/svg/icon-youtube-black.svg"
+                                   src=" <?php echo get_template_directory_uri(); ?>/assets/images/icons/icon-youtube-black.svg"
                                         alt="YouTube">
                                 </a>
                             </li>

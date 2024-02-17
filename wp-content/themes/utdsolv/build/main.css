@@ -386,12 +386,16 @@ li {
 }
 
 a {
-	color: #154734;
+	color: blue;
 	cursor: pointer;
 }
 
 a:visited {
 	color: #e87500;
+}
+
+a[style*='background-color: transparent']:not(:visited) {
+	color: #ffffff;
 }
 
 .wrapper {
@@ -422,6 +426,10 @@ a:visited {
 	width: 100%;
 	padding: 12px 0;
 }
+
+.utd-header a:visited {
+		color: #ffffff;
+	}
 
 .utd-header__logo {
 		background-color: #e87500;
