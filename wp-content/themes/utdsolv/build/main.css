@@ -386,7 +386,7 @@ li {
 }
 
 a {
-	color: purple;
+	color: #ffffff;
 	cursor: pointer;
 }
 
@@ -692,6 +692,10 @@ a[style*='background-color: transparent']:not(:visited) {
 			display: flex;
 			justify-content: space-between
 	}
+	}
+
+.site-information a {
+		text-decoration: none;
 	}
 
 .site-information img {
