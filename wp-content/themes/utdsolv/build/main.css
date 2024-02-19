@@ -1327,11 +1327,12 @@ a[style*='background-color: transparent']:not(:visited) {
 }
 
 .display-table th {
-		padding: 20px;
+		padding: 10px;
 		background-color: #e8e8e8;
 	}
 
-.display-table tr {
+.display-table td {
 		padding: 10px;
+		border: 1px solid #e8e8e8;
 	}
 
