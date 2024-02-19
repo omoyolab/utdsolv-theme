@@ -1019,6 +1019,11 @@ a[style*='background-color: transparent']:not(:visited) {
 		margin-bottom: 8px;
 	}
 
+.featured-projects-box__category {
+		text-transform: uppercase;
+		color: #b35900;
+	}
+
 .featured-projects-box__text {
 		line-height: 1.6em;
 	}
