@@ -30,7 +30,7 @@
                 </div>
                 <div class="page-section">
                     <div class="search-filter-box">
-						<form method="get" action="<?php echo esc_url( home_url( '/page-search-result' ) ); ?>">
+						<form method="get" action="<?php echo esc_url( home_url( '/past-projects' ) ); ?>">
 						    <input class="x" type="text" name="keyword_search" placeholder="Enter keyword search">
                         <div class="input-group">
                             <div class="input-group-item">
@@ -172,7 +172,7 @@
                             </select>
                             </div>
                             <div class="input-group-item">
-                                <select>
+                                <select name="academic_area">
                                     <option value>Academic Area</option>
                                     <option value="ITSS 4395">ITSS 4395</option>
                                     <option value="BPS 4395">BPS 4395</option>
@@ -195,37 +195,71 @@
 
                 </div>
                 <div class="page-section">
-    <h4 class="page-section__title">Featured Projects</h4>
-    <div class="featured-projects">
-        <div class="row row--gutters">
-            <?php
-            $args = array(
-                'post_type' => 'project',
-                'posts_per_page' => 3,
-                'orderby' => 'rand'
-            );
-            $query = new WP_Query($args);
-            if ($query->have_posts()) :
-                while ($query->have_posts()) : $query->the_post();
-            ?>
-                    <div class="row__large-33">
-                        <div class="featured-projects-box">
-                            <h5 class="featured-projects-box__header"><?php the_title(); ?></h5>
-                            <p class="featured-projects-box__text"><?php echo wp_trim_words(get_the_excerpt(), 45); ?></p>
-                            <a href="<?php the_permalink(); ?>" class="btn btn-sm btn-orange">Read More</a>
+                   <!-- Display Search here -->
+                   <?php
+            if ( isset( $_GET['keyword_search'] ) || isset( $_GET['sponsor_name'] ) || isset( $_GET['industry'] ) || isset( $_GET['semester'] ) || isset( $_GET['academic_area'] ) ) {
+                // Build search query arguments
+                $args = array(
+                    'post_type' => 'project',
+                    'posts_per_page' => -1, // Retrieve all matching posts
+                );
+
+                // Keyword search
+                if ( isset( $_GET['keyword_search'] ) && ! empty( $_GET['keyword_search'] ) ) {
+                    $args['s'] = sanitize_text_field( $_GET['keyword_search'] );
+                }
+
+                // Other input fields
+                if ( isset( $_GET['sponsor_name'] ) && ! empty( $_GET['sponsor_name'] ) ) {
+                    $args['meta_query'][] = array(
+                        'key' => 'project_sponsor_name',
+                        'value' => sanitize_text_field( $_GET['sponsor_name'] ),
+                        'compare' => 'LIKE',
+                    );
+                }
+                if ( isset( $_GET['industry'] ) && ! empty( $_GET['industry'] ) ) {
+                    $args['meta_query'][] = array(
+                        'key' => 'project_industry',
+                        'value' => sanitize_text_field( $_GET['industry'] ),
+                        'compare' => '=',
+                    );
+                }
+                if ( isset( $_GET['semester'] ) && ! empty( $_GET['semester'] ) ) {
+                    $args['meta_query'][] = array(
+                        'key' => 'project_semester',
+                        'value' => sanitize_text_field( $_GET['semester'] ),
+                        'compare' => '=',
+                    );
+                }
+                if ( isset( $_GET['academic_area'] ) && ! empty( $_GET['academic_area'] ) ) {
+                    $args['meta_query'][] = array(
+                        'key' => 'project_academic_area', // Custom field key
+                        'value' => sanitize_text_field( $_GET['academic_area'] ),
+                        'compare' => '=',
+                    );
+                }
+                
+                // Perform the search query
+                $search_query = new WP_Query( $args );
+
+                // Display search results
+                if ( $search_query->have_posts() ) :
+                    while ( $search_query->have_posts() ) : $search_query->the_post();
+                        ?>
+                        <div class="search-result">
+                            <h3><?php the_title(); ?></h3>
+                            <!-- Additional information if needed -->
                         </div>
-                    </div>
-            <?php
-                endwhile;
-                wp_reset_postdata(); // Reset the query
-            else :
-                echo 'No projects found';
-            endif;
+                        <?php
+                    endwhile;
+                    wp_reset_postdata();
+                else :
+                    echo '<p>No projects found.</p>';
+                endif;
+            }
             ?>
-        </div>
-    </div>
-</div>
-</div>
- </main>
+                </div>
+         </div>
+    </main>
 
  <?php get_footer(); ?> 

@@ -23,7 +23,7 @@
                             <li><a href="https://www.utdallas.edu/directory/">Directory</a></li>
                             <li><a href="https://www.utdallas.edu/campus-life/">Campus </a></li>
                             <li><a href="https://elearning.utdallas.edu/ultra">E-learning</a></a></li>
-                            <li><a href="https://www.utdallas.edu/galaxy/">Galaxy</li>
+                            <li><a href="https://www.utdallas.edu/galaxy/">Galaxy</a></li>
                         </ul>
                     </div>
                 </div>
