@@ -386,7 +386,7 @@ li {
 }
 
 a {
-	color: #ffffff;
+	color: #154734;
 	cursor: pointer;
 }
 
@@ -469,6 +469,11 @@ a[style*='background-color: transparent']:not(:visited) {
 			display: inline;
 			float: right;
 			padding-right: 20px;
+		}
+
+.utd-header__links a {
+			color: #ffffff;
+			text-decoration: none;
 		}
 
 .utdsolv-header {
