@@ -126,7 +126,7 @@
             <div class="page-section">
     <h4 class="page-section__title">Featured Projects</h4>
     <div class="featured-projects">
-        <div class="row row--gutters">
+        <div class="row row--gutters row--equal-height-medium">
             <?php
             $args = array(
                 'post_type' => 'project',
@@ -141,7 +141,8 @@
                         <div class="featured-projects-box">
                             <h5 class="featured-projects-box__header"><?php the_title(); ?></h5>
                             <p class="featured-projects-box__text"><?php echo wp_trim_words(get_the_excerpt(), 45); ?></p>
-                            <a href="<?php the_permalink(); ?>" class="btn btn-sm btn-orange">Read More</a>
+                            <p class="featured-projects-box__category"><?php echo get_field('project_industry'); ?></p>
+                            <a href="<?php the_permalink(); ?>" class="btn btn-sm btn-green btn-bottom">Read More</a>
                         </div>
                     </div>
             <?php

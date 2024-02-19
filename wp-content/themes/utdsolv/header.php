@@ -46,7 +46,7 @@
                         <li><a href="<?php echo site_url('/past-projects') ?>">Past Projects</a></li>
                         <li><a href="<?php echo site_url('/for-companies') ?>">For Companies</a></li>
                         <li><a href="<?php echo site_url('/students') ?>">Students</a></li>
-                        <li><a href="<?php echo site_url('/news') ?>">News</a></li>
+                        <!-- <li><a href="<?php echo site_url('/news') ?>">News</a></li> -->
                         <li><a href="<?php echo site_url('/Contact') ?>">Contact</a></li>
                         <li><a href="<?php echo site_url('/faq') ?>">FAQ</a></li>
                     </ul>

@@ -32,6 +32,9 @@
                     <div class="search-filter-box">
 						<form method="get" action="<?php echo esc_url( home_url( '/past-projects' ) ); ?>">
 						    <input class="x" type="text" name="keyword_search" placeholder="Enter keyword search">
+                            <div>
+                                <h3 class="headline headline--center"> Filtered Search </h3>
+                            </div>
                         <div class="input-group">
                             <div class="input-group-item">
                                 <input class="x" type="text"  name="sponsor_name"  placeholder="Sponsor Name">
@@ -181,7 +184,6 @@
                                     <option value="OPRE 4395">OPRE 4395</option>
                                     <option value="HMGT 4395">HMGT 4395</option>
                                     <option value="OPRE 4395 + Math Sci">OPRE 4395 + Math Sci</option>
-
                                     <!-- Add more options as needed -->
                                 </select>
                             </div>
@@ -239,23 +241,66 @@
                     );
                 }
                 
-                // Perform the search query
-                $search_query = new WP_Query( $args );
+                $search_query = new WP_Query($args);
+                
+                
+// Variables to store selected options
+$keyword = isset($_GET['keyword_search']) ? sanitize_text_field($_GET['keyword_search']) : '';
+$sponsor_name = isset($_GET['sponsor_name']) ? sanitize_text_field($_GET['sponsor_name']) : '';
+$industry = isset($_GET['industry']) ? sanitize_text_field($_GET['industry']) : '';
+$semester = isset($_GET['semester']) ? sanitize_text_field($_GET['semester']) : '';
+$academic_area = isset($_GET['academic_area']) ? sanitize_text_field($_GET['academic_area']) : '';
 
-                // Display search results
-                if ( $search_query->have_posts() ) :
-                    while ( $search_query->have_posts() ) : $search_query->the_post();
-                        ?>
-                        <div class="search-result">
-                            <h3><?php the_title(); ?></h3>
-                            <!-- Additional information if needed -->
-                        </div>
-                        <?php
-                    endwhile;
-                    wp_reset_postdata();
-                else :
-                    echo '<p>No projects found.</p>';
-                endif;
+// Display selected options
+?>
+<div class="page-section bg-gray">
+    <div  class="bg-white-inner">   
+    <h3 class="headline headline--small">Search Result for:</h3>
+    <p>Keyword: <?php echo esc_html($keyword); ?><br>
+    Sponsor Name: <?php echo esc_html($sponsor_name); ?><br>
+    Industry: <?php echo esc_html($industry); ?><br>
+    Semester: <?php echo esc_html($semester); ?><br>
+    Academic Area: <?php echo esc_html($academic_area); ?></p>
+    </div>
+</div>
+
+ <?php  
+// Display search results
+if ($search_query->have_posts()) :
+    ?>
+    <table class="display-table">
+        <tr>
+            <th class="headline headline--small">Project Name</th>
+            <th class="headline headline--small">Semester</th>
+            <th class="headline headline--small">Industry</th>
+            <th class="headline headline--small">Academic Area</th>
+        </tr>
+        <?php
+        while ($search_query->have_posts()) : $search_query->the_post();
+            // Get custom field values
+            $semester = get_post_meta(get_the_ID(), 'project_semester', true);
+            $industry = get_post_meta(get_the_ID(), 'project_industry', true);
+            $academic_area = get_post_meta(get_the_ID(), 'project_academic_area', true);
+        ?>
+            <tr>
+                <td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
+                <td><?php echo esc_html($semester); ?></td>
+                <td><?php echo esc_html($industry); ?></td>
+                <td><?php echo esc_html($academic_area); ?></td>
+            </tr>
+        <?php
+        endwhile;
+        ?>
+    </table>
+<?php
+    wp_reset_postdata();
+else :
+    echo '<div class="page-section bg-gray">
+    <p>No project matches this search criteria</p>
+</div>';
+endif;
+
+
             }
             ?>
                 </div>
