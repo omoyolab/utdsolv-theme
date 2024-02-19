@@ -944,60 +944,70 @@ a[style*='background-color: transparent']:not(:visited) {
 }
 
 .btn-green {
-	border: 1px solid transparent !important;
-	color: #fff !important;
-	background: #154734;
-}
+		border: 1px solid transparent !important;
+		color: #fff !important;
+		background: #154734;
+	}
 
 .btn-green:hover {
-	background: #e87500;
-}
+		background: #e87500;
+	}
 
 .btn-orange {
-	border: 1px solid transparent !important;
-	font-size: 18pt; /* required to meet WCAG 2.0 AA */
-	color: #fff !important;
-	background: #e87500;
-}
+		border: 1px solid transparent !important;
+		font-size: 18pt; /* required to meet WCAG 2.0 AA */
+		color: #fff !important;
+		background: #e87500;
+	}
 
 .btn-orange:hover {
-	background: #154734;
-}
+		background: #154734;
+	}
 
 .btn-outline-green {
-	border: 1px solid #154734 !important;
-	color: #154734 !important;
-	background: none;
-}
+		border: 1px solid #154734 !important;
+		color: #154734 !important;
+		background: none;
+	}
 
 .btn-outline-green:hover {
-	border: 1px solid #eee !important;
-	background: #f6f6f6;
-}
+		border: 1px solid #eee !important;
+		background: #f6f6f6;
+	}
 
 .btn-outline-orange {
-	border: 1px solid #e87500 !important;
-	font-size: 18pt; /* required to meet WCAG 2.0 AA */
-	color: #e87500 !important;
-	background: none;
-}
+		border: 1px solid #e87500 !important;
+		font-size: 18pt; /* required to meet WCAG 2.0 AA */
+		color: #e87500 !important;
+		background: none;
+	}
 
 .btn-outline-orange:hover {
-	border: 1px solid #eee !important;
-	color: #c95100 !important;
-	background: #f6f6f6;
-}
+		border: 1px solid #eee !important;
+		color: #c95100 !important;
+		background: #f6f6f6;
+	}
 
 .btn-simple-icon {
-	width: 1.25em;
-	height: 1.25em;
-	padding: 0.05em 0.05em 0.25em 0.3em;
-}
+		width: 1.25em;
+		height: 1.25em;
+		padding: 0.05em 0.05em 0.25em 0.3em;
+	}
+
+.btn-bottom {
+		align-self: flex-end;
+		width: 100%;
+	}
 
 .featured-projects-box {
 		border: 1px solid #e8e8e8;
-		padding: 25px;
+		padding: 15px;
 		margin-bottom: 18px;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
 	}
 
 .featured-projects-box__header {
