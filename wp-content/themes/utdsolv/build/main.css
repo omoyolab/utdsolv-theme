@@ -1239,6 +1239,11 @@ a[style*='background-color: transparent']:not(:visited) {
 		text-align: center;
 	}
 
+.headline--small {
+		font-size: 1.2rem;
+		font-weight: 600;
+	}
+
 .contact {
 	background-color: rgba(255, 255, 255, 0.8);
 	padding: 0 18px 1px 18px;
@@ -1313,5 +1318,20 @@ a[style*='background-color: transparent']:not(:visited) {
 .accordion-content {
 		padding: 10px;
 		display: none;
+	}
+
+.display-table {
+	width: 80%;
+	border: 1px solid #e8e8e8;
+	margin: 10px auto;
+}
+
+.display-table th {
+		padding: 20px;
+		background-color: #e8e8e8;
+	}
+
+.display-table tr {
+		padding: 10px;
 	}
 
