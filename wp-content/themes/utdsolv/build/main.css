@@ -1028,6 +1028,21 @@ a[style*='background-color: transparent']:not(:visited) {
 		line-height: 1.6em;
 	}
 
+.featured-projects_box__info {
+		background: #cccccc;
+	}
+
+.featured-projects-box__info > ul > li {
+		/* Styles for the outer list items */
+		font-size: 18px;
+		color: #154734;
+	}
+
+.featured-projects-box__info > ul > li > ul > li {
+		/* Styles for the inner list items */
+		color: #333;
+	}
+
 .sponsor-slider {
 	overflow: hidden;
 	position: relative;
@@ -1179,6 +1194,23 @@ a[style*='background-color: transparent']:not(:visited) {
 	}
 
 .bg-gray--narrow {
+		width: 850px;
+		margin: 0 auto;
+	}
+
+.bg-gray-secondary {
+	background-color: #cccccc;
+	padding: 25px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+.bg-gray-secondary li {
+		margin-top: 10px;
+		line-height: 1.4;
+	}
+
+.bg-gray-secondary--narrow {
 		width: 850px;
 		margin: 0 auto;
 	}
