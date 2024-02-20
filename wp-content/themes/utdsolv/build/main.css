@@ -392,7 +392,7 @@ a {
 }
 
 a:visited {
-	color: #e87500;
+	color: #b35900;
 }
 
 a[style*='background-color: transparent']:not(:visited) {
@@ -1085,7 +1085,7 @@ a[style*='background-color: transparent']:not(:visited) {
 @media (min-width: 530px) {
 
 .featured-news-box {
-		width: 75%;
+		width: 90%;
 }
 	}
 
