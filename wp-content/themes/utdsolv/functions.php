@@ -16,6 +16,13 @@
 
  function UTDSolv_Features(){
     add_theme_support('title-tag');
+    add_theme_support( 'post-thumbnails');
+    remove_filter('the_content', 'wpautop');
+
+    // Add custom image size
+if (function_exists('add_image_size')) {
+   add_image_size('custom-thumbnail', 300, 9999); // 300 pixels wide, height auto
+}
    //  register_nav_menu('headerMenuLocation', 'Header Menu Location');
  }
 

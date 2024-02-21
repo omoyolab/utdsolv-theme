@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://use.typekit.net/roc5fuc.css">
         <link rel="stylesheet" href>
+        <link rel="icon" type="image/png" sizes="32x32" href="https://mba.utdallas.edu/files/2019/11/favicon-32x32-new.png">
     </head>
     <body <?php body_class(); ?>>
         <header>
@@ -31,7 +32,7 @@
             <div class="site-information">
                 <div class="wrapper">
                     <div class="site-information__text">
-                        <h1>UTDSolv <span class="orange-text">Capstone Project</span></h1>
+                        <h1><a href="<?php echo site_url('/') ?>">UTDSolv <span class="orange-text">Capstone Project</span></a></h1>
                     </div>
                     <div class="site-information__logo">
                         <img src=" <?php echo get_template_directory_uri(); ?>/assets/images/som-logo.png">

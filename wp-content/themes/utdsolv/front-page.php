@@ -157,58 +157,47 @@
 </div>
 
      
-            <!-- News Section -->
-            <div class="page-section">
-                <h4 class="page-section__title">Latest News</h4>
-                <div class="featured-news">
-                    <div class="row row--gutters row--equal-height-medium">
-                        <div class="row__large-50">
-                            <div class="featured-news-box">
-                                <h5 class="featured-news-box__headline">Event
-                                    Showcases Real-World Projects Led by Jindal
-                                    School Seniors</h5>
-                                <div class="featured-news-box__image">
-                                    <img src="https://placeholder.com/256x260">
-                                </div>
-                                <div class="featured-news-box__content">
-                                    <p class="featured-news-box__text">A recent
-                                        event held by UTDsolv at the Naveen
-                                        Jindal School of Management showcased
-                                        projects in which teams of seniors
-                                        collaborated throughout semester with
-                                        industry professionals. Students
-                                        utilized the knowledge and skills
-                                        acquired in and skills acquired in.</p>
-                                    <p class="featured-news-box__taxonomy">4-min
-                                        read</p>
-                                </div>
+<!-- News Section -->
+<div class="page-section">
+    <h4 class="page-section__title">Latest News</h4>
+
+    <div class="featured-news">
+            <?php
+            $args = array(
+                'post_type'      => 'post',
+                'posts_per_page' => 1,
+                'post_status' => 'publish',
+                'orderby'        => 'date', // Order by date (latest post first)
+                'order'          => 'DESC',
+            );
+            $query = new WP_Query($args);
+            if ($query->have_posts()) :
+                while ($query->have_posts()) : $query->the_post();
+                    // Get the post thumbnail source URL
+                    $thumbnail_src = wp_get_attachment_image_src(get_post_thumbnail_id(), 'custom-thumbnail');
+            ?>
+                        <div class="featured-news-box">
+                            <h5 class="featured-news-box__headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+                            <div class="featured-news-box__image">
+                                <img src="<?php echo esc_url($thumbnail_src[0]); ?>" alt="<?php the_title_attribute(); ?>">
+                            </div>
+                            <div class="featured-news-box__content">
+                                <p class="featured-news-box__text"><?php the_excerpt(); ?></p>
+                                <p class="featured-news-box__taxonomy">4-min read</p>
                             </div>
                         </div>
-                        <div class="row__large-50">
-                            <div class="featured-news-box">
-                                <h5 class="featured-news-box__headline">Featured
-                                    Story Headline</h5>
-                                <div class="featured-news-box__image">
-                                    <img src="https://placeholder.com/256x260">
-                                </div>
-                                <div class="featured-news-box__content">
-                                    <p class="featured-news-box__text">Lorem
-                                        Ipsum is simply dummy text of the
-                                        printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard
-                                        dummy text ever since the 1500s, when an
-                                        unknown printer took a galley of type
-                                        and scrambled it to make a type specimen
-                                        book.when an unknown printer took a
-                                        galley of type.</p>
-                                    <p class="featured-news-box__taxonomy">4-min
-                                        read</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php
+                endwhile;
+                wp_reset_postdata(); // Reset the query
+            else :
+                echo 'No posts found';
+            endif;
+            ?>
+        </div>
+    </div>
+
+
+
         </div>
 
 

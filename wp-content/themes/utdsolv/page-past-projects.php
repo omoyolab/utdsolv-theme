@@ -8,7 +8,7 @@
                     <hr class="hr-rule">
                 </div>
                 <div class="row row--gutters">
-                    <div class="row__large-45">
+                    <div class="row__large-55">
                         <h2 class="headline">UTDSolv Previous Projects</h2>
                         <p>UTDsolv has worked with many companies in various
                             areas
@@ -24,7 +24,7 @@
                     </div>
                     <div class="row__large-45">
                         <figure>
-                            <img src="https://placeholder.com/750x450" alt>
+                            <img src="https://placeholder.com/600x400" alt>
                         </figure>
                     </div>
                 </div>
