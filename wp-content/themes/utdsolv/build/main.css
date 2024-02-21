@@ -436,6 +436,7 @@ a[style*='background-color: transparent']:not(:visited) {
 		background-color: #e87500;
 		position: absolute;
 		top: 10;
+		z-index: 5;
 	}
 
 .utd-header__logo img {
@@ -547,6 +548,7 @@ a[style*='background-color: transparent']:not(:visited) {
 		height: 21px;
 		top: 15px;
 		position: absolute;
+		z-index: 999;
 		right: 20px;
 	}
 
