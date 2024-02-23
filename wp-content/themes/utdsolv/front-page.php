@@ -183,7 +183,7 @@
                             </div>
                             <div class="featured-news-box__content">
                                 <p class="featured-news-box__text"><?php the_excerpt(); ?></p>
-                                <p class="featured-news-box__taxonomy">4-min read</p>
+                                <p class="news-section__date"><?php echo date('F j, Y'); ?></p>
                             </div>
                         </div>
             <?php

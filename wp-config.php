@@ -28,10 +28,10 @@ if (strstr($_SERVER['SERVER_NAME'], 'utdsolv.local')){
 	define( 'DB_PASSWORD', 'root' );
 	define( 'DB_HOST', 'localhost' );
 	}else{
-		define( 'DB_NAME', 'dbf1xvsrgstorf' );
-		define( 'DB_USER', 'uh2hidgucqyol' );
-		define( 'DB_PASSWORD', 'hg1esyw9mlzj' );
-		define( 'DB_HOST', '127.0.0.1' );
+		define( 'DB_NAME', 'utdsolv' );
+		define( 'DB_USER', 'root' );
+		define( 'DB_PASSWORD', 'mysql@ITroot' );
+		define( 'DB_HOST', 'localhost' );
 	}
 	 
 	
